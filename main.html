@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshFruits Navbar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+      <!-- Navbar -->
+  <div class="navbar">
+    <!-- Logo -->
+    <img src="/logo.png" alt="FreshFruits Logo" class="logo">
+
+    <!-- Center Section -->
+    <div class="center">
+    <input value="" placeholder="Search our store"/>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <div class="search-dropdown">
+          <div>Trending Searches</div>
+          <div>Cheese</div>
+          <div>Honey</div>
+          <div>Chocolate</div>
+          <div>Yogurt</div>
+          <div>Ramen</div>
+          <div>Granola</div>
+          <div>Greek Yogurt</div>
+          <div>Hummus</div>
+          <div>Mushroom</div>
+          <div>Bread</div>
+          <div>Coffee</div>
+          <div>Oats</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right">
+      <div class="location">Delivery to Karachi</div>
+      <div class="icon-container">
+        <i class="fas fa-user icon"></i>
+        <div class="dropdown">
+          <a href="#">My Account</a>
+          <a href="#">Forgot My Password</a>
+          <a href="#">Log In</a>
+        </div>
+      </div>
+      <a href="/cart.html" class="cart-icon-container">
+        <i class="fas fa-shopping-cart" id="cart-icon"></i>
+        <span id="cart-notification" class="cart-notification"></span>
+      </a>
+  </div>
+  </div>
+ <br/>
+
+
+
+<div class="slider-container">
+    <div class="slider" id="slider">
+      <div class="slide">
+        <img src="fruits.jpg" alt="Fruits">
+        <h4>Fruits</h4>
+      </div>
+      <div class="slide">
+        <img src="vegetables.jpg" alt="Vegetables">
+        <h4>Vegetables</h4>
+      </div>
+      <div class="slide">
+        <img src="dates.jpg" alt="Nuts & Dates">
+        <h4>Nuts & Dates</h4>
+      </div>
+      <div class="slide">
+        <img src="bakery.jpg" alt="Bakery">
+        <h4>Bakery</h4>
+      </div>
+      <div class="slide">
+        <img src="dairy.jpg" alt="Dairy">
+        <h4>Dairy</h4>
+      </div>
+      <div class="slide">
+        <img src="pantry.jpg" alt="Pantry">
+        <h4>Pantry</h4>
+      </div>
+      <div class="slide">
+        <img src="basket.jpg" alt="Gift Basket">
+        <h4>Gift Basket</h4>
+      </div>
+      <div class="slide">
+        <img src="frozen.jpg" alt="Frozen">
+        <h4>Frozen</h4>
+      </div>
+      <div class="slide">
+        <img src="childfood.jpg" alt="Baby Food">
+        <h4>Baby Food</h4>
+      </div>
+      <div class="slide">
+        <img src="tea and coffee.jpg" alt="Tea & Coffee">
+        <h4>Tea & Coffee</h4>
+      </div>
+      <div class="slide">
+        <img src="bevarages.jpg" alt="Beverages">
+        <h4>Beverages</h4>
+      </div>
+    </div>
+    <div class="slider-buttons">
+      <button id="prev"><i class="fas fa-chevron-left"></i> Prev</button>
+      <button id="next">Next <i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <script>
+    const slider = document.getElementById('slider');
+    const slides = slider.children;
+    let currentIndex = 0;
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      slider.style.transform = `translateX(-${currentIndex * 220}px)`;
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      slider.style.transform = `translateX(-${currentIndex * 220}px)`;
+    });
+
+    // Adjust slider width for responsiveness
+    window.addEventListener('resize', () => {
+      const width = document.body.clientWidth;
+      if (width < 600) {
+        slider.style.transform = `translateX(-${currentIndex * 160}px)`;
+      } else {
+        slider.style.transform = `translateX(-${currentIndex * 220}px)`;
+      }
+    });
+  </script>
+
+   <!-- Video Section -->
+   <div class="video-container">
+    <video controls loop>
+      <source src="fruits.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Icons Section -->
+  <div class="icons-container">
+    <div class="icon-box">
+      <i class="fas fa-lemon"></i>
+      <h4>Greek Yogurt</h4>
+    </div>
+    <div class="icon-box">
+      <i class="fas fa-seedling"></i>
+      <h4>Gluten Free</h4>
+    </div>
+    <div class="icon-box">
+      <i class="fas fa-bread-slice"></i>
+      <h4>Bread & Loaf</h4>
+    </div>
+    <div class="icon-box">
+      <i class="fas fa-wine-bottle"></i>
+      <h4>Kefir & Kombucha</h4>
+    </div>
+    <div class="icon-box">
+      <i class="fas fa-cheese"></i>
+      <h4>Cheese</h4>
+    </div>
+    <div class="icon-box">
+      <i class="fas fa-gift"></i>
+      <h4>Gift Cards</h4>
+    </div>
+  </div>
+
+    <!-- Fruits Category -->
+    <div class="category-container">
+        <h2 class="category-title">Fruits</h2>
+        <div class="items-container">
+          <div class="item">
+            <img src="fruit1.jpg" alt="Fruit 1">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>4.0 (4 Reviews)</span>
+            </div>
+            <div class="price">Rs 120</div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+            <div class="item">
+              <img src="fruit2.jpg" alt="Fruit 2">
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.0 (4 Reviews)</span>
+              </div>
+              <div class="price">Rs 120</div>
+              <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+              <div class="item">
+                <img src="fruit3.jpg" alt="Fruit 3">
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span>4.0 (4 Reviews)</span>
+                </div>
+                <div class="price">Rs 120</div>
+                <button onclick="addToCart(this)">Add to Cart</button>
+              </div>
+                <div class="item">
+                  <img src="fruit4.jpg" alt="Fruit 4">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>4.0 (4 Reviews)</span>
+                  </div>
+                  <div class="price">Rs 120</div>
+                  <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                  <div class="item">
+                    <img src="fruit=2.jpg" alt="Fruit 5">
+                    <div class="rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <span>4.0 (4 Reviews)</span>
+                    </div>
+                    <div class="price">Rs 120</div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+                    <div class="item">
+                      <img src="frut6.jpg" alt="Fruit 6">
+                      <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.0 (4 Reviews)</span>
+                      </div>
+                      <div class="price">Rs 120</div>
+                      <button onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+          <!-- Repeat 5 more items -->
+        </div>
+      </div>
+    
+      <!-- Vegetables Category -->
+      <div class="category-container">
+        <h2 class="category-title">Vegetables</h2>
+        <div class="items-container">
+          <div class="item">
+            <img src="vegetables.jpg" alt="Vegetable 1">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>4.0 (4 Reviews)</span>
+            </div>
+            <div class="price">Rs 120</div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+            <div class="item">
+              <img src="veg.jpg" alt="Vegetable 1">
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.0 (4 Reviews)</span>
+              </div>
+              <div class="price">Rs 120</div>
+              <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+                <div class="item">
+                  <img src="vege2.jpg" alt="Vegetable 1">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>4.0 (4 Reviews)</span>
+                  </div>
+                  <div class="price">Rs 120</div>
+                  <button onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                    <div class="item">
+                      <img src="vege4.jpg" alt="Vegetable 1">
+                      <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>4.0 (4 Reviews)</span>
+                      </div>
+                      <div class="price">Rs 120</div>
+                      <button onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                        <div class="item">
+                          <img src="vege5.jpg" alt="Vegetable 1">
+                          <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.0 (4 Reviews)</span>
+                          </div>
+                          <div class="price">Rs 120</div>
+                          <button onclick="addToCart(this)">Add to Cart</button>
+                        </div>
+
+                        <div class="banner-container banner-image">
+                          <img src="basket.jpg" alt="Image 1">
+                      </div>
+
+      
+                        <div class="category-container">
+                            <h2 class="category-title">Dry Fruits</h2>
+                            <div class="items-container">
+                              <div class="item">
+                                <img src="dates.jpg" alt="Fruit 1">
+                                <div class="rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <span>4.0 (4 Reviews)</span>
+                                </div>
+                                <div class="price">Rs 120</div>
+                                <button onclick="addToCart(this)">Add to Cart</button>
+                              </div>
+              
+                  <div class="item">
+                    <img src="dry2.jpg" alt="Vegetable 1">
+                    <div class="rating">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <span>4.0 (4 Reviews)</span>
+                    </div>
+                    <div class="price">Rs 120</div>
+                    <button onclick="addToCart(this)">Add to Cart</button>
+                  </div>
+    
+                      <div class="item">
+                        <img src="dry3.jpg" alt="Vegetable 1">
+                        <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <span>4.0 (4 Reviews)</span>
+                        </div>
+                        <div class="price">Rs 120</div>
+                        <button onclick="addToCart(this)">Add to Cart</button>
+                      </div>
+                      
+                          <div class="item">
+                            <img src="dry4.jpg" alt="Vegetable 1">
+                            <div class="rating">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <span>4.0 (4 Reviews)</span>
+                            </div>
+                            <div class="price">Rs 120</div>
+                            <button onclick="addToCart(this)">Add to Cart</button>
+                          </div>
+                              <div class="item">
+                                <img src="dry5.jpg" alt="Vegetable 1">
+                                <div class="rating">
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                  <span>4.0 (4 Reviews)</span>
+                                </div>
+                                <div class="price">Rs 120</div>
+                                <button onclick="addToCart(this)">Add to Cart</button>
+                              </div>
+                                  <div class="item">
+                                    <img src="dry6.jpg" alt="Vegetable 1">
+                                    <div class="rating">
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <i class="fas fa-star"></i>
+                                      <span>4.0 (4 Reviews)</span>
+                                    </div>
+                                    <div class="price">Rs 120</div>
+                                    <button onclick="addToCart(this)">Add to Cart</button>
+                                </div>
+
+                              
+
+
+<div class="category-container">
+    <h2 class="category-title">Bakery</h2>
+    <div class="items-container">
+      <div class="item">
+        <img src="bakery.jpg" alt="Fruit 1">
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>4.0 (4 Reviews)</span>
+        </div>
+        <div class="price">Rs 120</div>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+
+<div class="item">
+<img src="bakery1.jpg" alt="Vegetable 1">
+<div class="rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<span>4.0 (4 Reviews)</span>
+</div>
+<div class="price">Rs 120</div>
+<button onclick="addToCart(this)">Add to Cart</button>
+</div>
+
+<div class="item">
+<img src="bakery3.jpg" alt="Vegetable 1">
+<div class="rating">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <span>4.0 (4 Reviews)</span>
+</div>
+<div class="price">Rs 120</div>
+<button onclick="addToCart(this)">Add to Cart</button>
+</div>
+
+  <div class="item">
+    <img src="bakary4.jpg" alt="Vegetable 1">
+    <div class="rating">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <span>4.0 (4 Reviews)</span>
+    </div>
+    <div class="price">Rs 120</div>
+    <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
+      <div class="item">
+        <img src="bakery3.jpg" alt="Vegetable 1">
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <span>4.0 (4 Reviews)</span>
+        </div>
+        <div class="price">Rs 120</div>
+        <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+          <div class="item">
+            <img src="bakery5.jpg" alt="Vegetable 1">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>4.0 (4 Reviews)</span>
+            </div>
+            <div class="price">Rs 120</div>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+</div>
+
+ 
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Connect with us</h3>
+        <p>Email: <a href="mailto:info@freshbasket.com.pk">info@freshbasket.com.pk</a></p>
+        <p>Phone: <a href="tel:+9202135343388">021 35343388</a></p>
+      </div>
+  
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Refund & Return Policy</a></li>
+          <li><a href="#">Postal Codes</a></li>
+          <li><a href="#">Become a Vendor</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-section">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Nuts & Dates</a></li>
+          <li><a href="#">Bakery</a></li>
+          <li><a href="#">Dairy</a></li>
+          <li><a href="#">Pantry</a></li>
+          <li><a href="#">Gift Basket</a></li>
+          <li><a href="#">Frozen</a></li>
+          <li><a href="#">Baby Food</a></li>
+          <li><a href="#">Tea & Coffee</a></li>
+          <li><a href="#">Beverages</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© Fresh Basket 2024 All rights reserved. Powered by rad</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
